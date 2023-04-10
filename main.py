@@ -37,6 +37,9 @@ def generate_acceptat(initial, final, lmax):
         #cuvantul e acceptat 
         if current in final and length>0:
             acceptat.add(cuvant)
+        
+        if current in final and length==0:
+            acceptat.add("lambda")
 
         if length<lmax:
             for simbol, nexts_list in transitions.get(current, {}).items(): # daca nu am simbol si nexts in transitions[current], atunci ={}
